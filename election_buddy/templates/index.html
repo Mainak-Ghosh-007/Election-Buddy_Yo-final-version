@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Election BUDDy_Yo | Premium AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="glow-bg"></div>
+
+    <div class="main-container">
+        <!-- Sidebar / Tools -->
+        <aside class="sidebar">
+            <div class="logo">
+                <i class="fas fa-box-archive"></i>
+                <h2>BUDDy_<span>Yo</span></h2>
+            </div>
+            <nav>
+                <button class="nav-btn active"><i class="fas fa-comment-dots"></i> AI Assistant</button>
+                <button class="nav-btn" onclick="openChecker()"><i class="fas fa-user-check"></i> Eligibility
+                    Tool</button>
+            </nav>
+            <div class="promo-card">
+                <p>Every Vote Counts!</p>
+            </div>
+        </aside>
+
+        <!-- Chat Area -->
+        <main class="chat-section">
+            <header>
+                <div class="status">
+                    <span class="dot"></span> Online Intelligence
+                </div>
+            </header>
+
+            <div id="chat-box" class="chat-box">
+                <div class="message ai">
+                    <div class="bubble">Hello! I'm BUDDy_Yo. Ask me anything ABOUT ELECTIONS 2026!</div>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <input type="text" id="user-input" placeholder="Ask about registration, IDs, polling...">
+                <button onclick="sendMessage()" id="send-btn"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </main>
+    </div>
+
+    <!-- Eligibility Checker Modal -->
+    <div id="checker-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeChecker()">&times;</span>
+            <h3>Voter Eligibility Checker</h3>
+            <div id="checker-form">
+                <p>Are you a citizen of this country?</p>
+                <button onclick="checkStep(1, true)">Yes</button>
+                <button onclick="checkStep(1, false)">No</button>
+            </div>
+            <div id="checker-result"></div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+
+</html>
